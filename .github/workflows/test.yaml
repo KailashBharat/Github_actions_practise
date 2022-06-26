@@ -14,4 +14,4 @@ jobs:
     steps:
       -uses: actions/checkout@v3
       -name: Run one-line script
-        run: echo Hello from job2
+       run: echo Hello from job2
