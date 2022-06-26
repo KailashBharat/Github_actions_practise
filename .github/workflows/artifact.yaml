@@ -1,0 +1,27 @@
+name: Practise with artifact
+on:
+  push:
+    branches:
+      - main
+
+env:
+  FILE_NAME: artifact-test
+
+jobs:
+  upload-artifact:
+    - runs-on: ubuntu-latest
+    - steps:
+      - name: Checkout out code
+        uses: actions/checkout@v3
+
+      - name: Create ${{env.FILE_NAME}}
+         run: |
+          touch ${{env.FILE_NAME}}.txt
+          echo Hello World! > ${{env.FILE_NAME}} 
+
+      - name: Upload artifact
+        uses: actions/upload-artifact
+        with:
+          name: test
+          path: ./${{env.FILE_NAME}}
+      
