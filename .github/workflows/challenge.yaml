@@ -1,0 +1,27 @@
+name: Challenge
+on: push
+  branches: main
+
+jobs: 
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print the date
+        run: date
+  job2:
+    runs-on: macos-latest
+    steps:
+      - name: Print the date
+        run: date
+  job3:
+    runs-on: windows-latest
+    steps:
+      - name: Print the date
+        run: date
+  job4:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a job which is dependent on other jobs
+      - needs: [job1, job2, job3]
+        run: echo This job ran after job1 and job2 were complete
