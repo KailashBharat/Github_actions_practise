@@ -11,10 +11,8 @@ jobs:
   upload-artifact:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout out code
-        uses: actions/checkout@v3
-
       - name: Create ${{env.FILE_NAME}}
+        uses: actions/checkout@v3
          run: touch ${{env.FILE_NAME}}.md
       
       - name: Upload artifact
