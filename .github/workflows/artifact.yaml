@@ -1,8 +1,8 @@
-name: Practise with artifact
+name: Artifact
 on:
   push:
     branches:
-      # - main
+      - master
 
 env:
   FILE_NAME: artifact-test
