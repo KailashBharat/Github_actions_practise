@@ -2,7 +2,7 @@ name: Practise with artifact
 on:
   push:
     branches:
-      - main
+      # - main
 
 env:
   FILE_NAME: artifact-test
