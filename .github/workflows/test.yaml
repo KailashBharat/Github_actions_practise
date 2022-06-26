@@ -5,13 +5,13 @@ jobs:
   job1:
     runs-on: ubuntu:latest
     steps:
-      uses: actions/checkout@v3
+      -uses: actions/checkout@v3
       -name: Run one-line script
-      run: echo Hello from job1
+       run: echo Hello from job1
 
   job2: 
     runs-on: ubuntu:latest
     steps:
       -uses: actions/checkout@v3
       -name: Run one-line script
-      -run: echo Hello from job2
+        run: echo Hello from job2
