@@ -1,0 +1,26 @@
+name: Python CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get latest code
+        uses: actions/checkout@v3
+
+      - name: Setup Python environment
+        uses: actions/setup-python@v1.1.1
+
+      - name: Test python code
+        run: python hello.py
+
+  artifact:
+    runs-on: ubuntu-latest
+    needs: [test]
+    steps:
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3 
