@@ -31,4 +31,4 @@ jobs:
         uses: actions/download-artifact@v3
 
       - name: print output
-        run: cat output.txt      
+        run: ls output.txt      
