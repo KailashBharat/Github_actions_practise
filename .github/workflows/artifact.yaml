@@ -2,7 +2,7 @@ name: Artifact
 on:
   push:
     branches:
-      - master
+      - main
 
 env:
   FILE_NAME: artifact-test
@@ -14,9 +14,21 @@ jobs:
       - name: Checkout out code
         uses: actions/checkout@v2
 
+      - name: Add expr to file
+        run: expr 1 + 1 > outputfile.txt
+
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
-          name: test
-          path: .
-      
+          name: output.txt
+          path: outputfile.txt
+
+  download-artifact:
+    runs-on: ubuntu-latest
+    needs: main
+    steps:
+      - name: download artifact
+        uses: actions/download-artifact@v3
+
+      - name: print output
+        run: cat output.txt      
