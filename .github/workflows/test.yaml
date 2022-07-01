@@ -2,7 +2,7 @@ name: Test
 on: 
   push:
     branches:
-      - "master"
+      - "main"
 
 jobs: 
   job1:
@@ -10,11 +10,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run a one-line script
-        run: echo Hello, world!
-
-  job2: 
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Run one-line script
-        run: echo Hello from job2
+        run: echo "Current branch $GITHUB_REF"
