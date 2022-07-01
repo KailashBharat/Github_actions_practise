@@ -20,7 +20,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: output.txt
+          name: output
           path: outputfile.txt
 
   download-artifact:
@@ -31,4 +31,4 @@ jobs:
         uses: actions/download-artifact@v3
 
       - name: print output
-        run: ls output.txt      
+        run: cat output/outputfile.txt      
