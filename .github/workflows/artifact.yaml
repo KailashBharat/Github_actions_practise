@@ -33,8 +33,6 @@ jobs:
     steps:
       - name: download artifact
         uses: actions/download-artifact@v3
-        with:
-          name: output
 
       - name: print output
         run: cat output/outputfile.txt      
