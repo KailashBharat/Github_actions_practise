@@ -66,7 +66,7 @@ jobs:
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "github-actions-practise"
-          heroku_emai: "kailashbb12@hotmail.com"
+          heroku_email: "kailashbb12@hotmail.com"
 
       - name: Succesful deployment
         if: ${{success()}}
