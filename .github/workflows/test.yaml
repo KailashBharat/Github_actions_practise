@@ -1,10 +1,10 @@
 name: Test
-on: 
+on:
   push:
     branches:
       - "main"
 
-jobs: 
+jobs:
   test:
     runs-on: ubuntu-latest
     steps:
@@ -20,8 +20,7 @@ jobs:
         run: npm ci
 
       - name: Run tests
-        run: npm run test 
-
+        run: npm run test
 
   show-changes:
     runs-on: ubuntu-latest
@@ -35,21 +34,24 @@ jobs:
         id: file_changes
         uses: trilom/file-changes-action@v1.2.4
         with:
-          fileOutput: 'json'
+          fileOutput: "json"
 
       - name: Show file Changes
         run: |
-         printf "All files"
-         cat $HOME/files.json
-         printf "\n\nAdded files"
-         cat $HOME/files_added.json
-         printf "\n\nModified files"
-         cat $HOME/files_modified.json
-         printf "\n\nRemoved files"
-         cat $HOME/files_removed.json
-         printf "\n\nRenamed files"
-         cat $HOME/files_renamed.json
+          printf "All files\n"
+          cat $HOME/files.json
 
+          printf "\n\nAdded files\n"
+          cat $HOME/files_added.json
+
+          printf "\n\nModified files\n"
+          cat $HOME/files_modified.json
+
+          printf "\n\nRemoved files\n"
+          cat $HOME/files_removed.json
+
+          printf "\n\nRenamed files\n"
+          cat $HOME/files_renamed.json
 
   deploy:
     runs-on: ubuntu-latest
@@ -58,5 +60,5 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      
+
       - run: echo "Attempting to deploy"
