@@ -72,6 +72,6 @@ jobs:
         if: ${{success()}}
         run: echo "Succesful deployment"
 
-      - name: Succesful deployment
+      - name: Failed deployment
         if: ${{failure()}}
         run: echo "Failed deployment"
