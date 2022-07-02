@@ -18,6 +18,6 @@ describe("Testing bizz", () => {
     assert.equal(add(2, 2), 4);
   });
   it("should test the add function", () => {
-    assert.equal(add(3, 2), 4);
+    assert.equal(add(2, 2), 4);
   });
 });
