@@ -32,10 +32,13 @@ jobs:
         uses: actions/checkout@v3
 
       - name: File Changes Action
+        id: file_changes
         uses: trilom/file-changes-action@v1.2.4
+        with:
+          fileOutput: 'json'
 
       - name: Show file Changes
-        run: ls .
+        run: ls $HOME
 
 
   deploy:
