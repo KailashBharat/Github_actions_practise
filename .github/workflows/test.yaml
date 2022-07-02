@@ -25,9 +25,7 @@ jobs:
       - name: File Changes Action
         if: ${{failure()}}
         uses: trilom/file-changes-action@v1.2.4
-        with: 
-          fileOuput: 'json'
-      
+
       - name: Show file Changes
         run: cat $HOME/files.json
 
