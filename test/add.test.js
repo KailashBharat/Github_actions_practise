@@ -1,5 +1,5 @@
 const assert = require("assert");
-const {add, sub} = require("../index.js")
+const {add, sub} = require("../utils.js")
 
 describe("Testing bizz", () => {
   it("should test the add function", () => {

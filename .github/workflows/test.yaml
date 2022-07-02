@@ -61,4 +61,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - run: echo "Attempting to deploy"
+      - name: Deploy to Heroku
+        uses: AkhileshNS/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "github-actions-practise"
+          heroku_emai: "kailashbb12@hotmail.com"
+
+      - name: Succesful deployment
+        if: ${{success()}}
+        run: echo "Succesful deployment"
+
+      - name: Succesful deployment
+        if: ${{failure()}}
+        run: echo "Failed deployment"
