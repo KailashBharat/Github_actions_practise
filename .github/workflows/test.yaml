@@ -39,15 +39,15 @@ jobs:
 
       - name: Show file Changes
         run: |
-         echo "All files"
+         printf "All files"
          cat $HOME/files.json
-         echo "Added files"
+         printf "\n\nAdded files"
          cat $HOME/files_added.json
-         echo "Modified files"
+         printf "\n\nModified files"
          cat $HOME/files_modified.json
-         echo "Removed files"
+         printf "\n\nRemoved files"
          cat $HOME/files_removed.json
-         echo "Renamed files"
+         printf "\n\nRenamed files"
          cat $HOME/files_renamed.json
 
 
